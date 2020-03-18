@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QWebEngineView>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,8 +15,10 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+protected:
+    void resizeEvent(QResizeEvent *);
 private:
     Ui::MainWindow *ui;
+    QWebEngineView* devView;
 };
 #endif // MAINWINDOW_H
